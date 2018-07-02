@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div style="margin-bottom:10vh; display:flex; justify-content: start;">
+<h1 style="font-size:32px;">Posts</h1>
+<span style="display:flex; flex-direction:column; justify-content: space-between;"><%= link_to 'New Post', new_post_path %></span>
+</div>
+  <% @posts.each do |post| %>
+  <div style="margin-bottom:5vh; width:30%; height:30%;">
+<div>
+  <p style="font-weight: bold; color:black; font-size:18px;">Title</p>
+    <p><%= post.title %></p>
+</div>
+<div>
+<p style="font-weight: bold; color:black; font-size:18px;">Author</p>
+  <p><%= post.author %></p>
+</div>
+<div>
+  <p style="min-height:50px;"><%= post.text %></p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+<% end %>
