@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div style="margin-bottom:10vh; display:flex; justify-content: start;">
 <h1 style="font-size:32px;">Posts</h1>
-<span style="display:flex; flex-direction:column; justify-content: space-between;"><%= link_to 'New Post', new_post_path %></span>
 </div>
   <% @posts.each do |post| %>
   <div style="margin-bottom:5vh; width:30%; height:30%;">
